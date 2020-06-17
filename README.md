@@ -8,7 +8,7 @@ Official PyTorch implementation of the paper [Learning Texture Transformer Netwo
 * torchvision >= 0.4.0
 
 ## Model
-Pre-trained models can be downloaded from [google drive](https://drive.google.com/drive/folders/1CTm-r3hSbdYVCySuQ27GsrqXhhVOS-qh?usp=sharing).
+Pre-trained models can be downloaded from [onedrive](https://1drv.ms/u/s!Ajav6U_IU-1gmHZstHQxOTn9MLPh?e=e06Q7A), [baidu cloud](https://pan.baidu.com/s/1j9swBtz14WneuMYgTLkWtA)(0u6i), [google drive](https://drive.google.com/drive/folders/1CTm-r3hSbdYVCySuQ27GsrqXhhVOS-qh?usp=sharing).
 * *TTSR-rec.pt*: trained with only reconstruction loss
 * *TTSR.pt*: trained with all losses
 
