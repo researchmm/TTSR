@@ -1,11 +1,11 @@
 # TTSR
-Official pytorch implementation of the paper [Learning Texture Transformer Network for Image Super-Resolution](https://arxiv.org/abs/2006.04139) accepted in CVPR 2020.
+Official PyTorch implementation of the paper [Learning Texture Transformer Network for Image Super-Resolution](https://arxiv.org/abs/2006.04139) accepted in CVPR 2020.
 
 ## Requirements and dependencies
-* Python 3.7 (Recommend to use [Anaconda](https://www.anaconda.com/))
-* Python packages: `pip install numpy opencv-python`
-* Pytorch >= 1.1.0
-* Torchvision >= 0.4.0
+* python 3.7 (Recommend to use [Anaconda](https://www.anaconda.com/))
+* python packages: `pip install numpy opencv-python`
+* pytorch >= 1.1.0
+* torchvision >= 0.4.0
 
 ## Model
 Pre-trained models can be downloaded from [google drive](https://drive.google.com/drive/folders/1CTm-r3hSbdYVCySuQ27GsrqXhhVOS-qh?usp=sharing).
@@ -19,7 +19,7 @@ git clone https://github.com/FuzhiYang/TTSR.git
 cd TTSR
 ```
 2. Download [CUFED](http://acsweb.ucsd.edu/~yuw176/event-curation.html) dataset and modify "dataset_dir" in eval.sh
-3. Download pre-trained models from [google drive](https://drive.google.com/drive/folders/1CTm-r3hSbdYVCySuQ27GsrqXhhVOS-qh?usp=sharing), and modify "model_path" in eval.sh
+3. Download pre-trained models and modify "model_path" in eval.sh
 4. Run evaluation
 ```
 sh eval.sh
