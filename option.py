@@ -103,5 +103,11 @@ parser.add_argument('--eval_save_results', type=str2bool, default=False,
                     help='Save each image during evaluation')
 parser.add_argument('--model_path', type=str, default=None,
                     help='The path of model to evaluation')
+parser.add_argument('--test', type=str2bool, default=False,
+                    help='Test mode')
+parser.add_argument('--lr_path', type=str, default='./test/demo/lr/lr.png',
+                    help='The path of input lr image when testing')
+parser.add_argument('--ref_path', type=str, default='./test/demo/ref/ref.png',
+                    help='The path of ref image when testing')
 
 args = parser.parse_args()

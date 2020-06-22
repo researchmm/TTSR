@@ -2,7 +2,7 @@
 Official PyTorch implementation of the paper [Learning Texture Transformer Network for Image Super-Resolution](https://arxiv.org/abs/2006.04139) accepted in CVPR 2020.
 
 ## Requirements and dependencies
-* python 3.7 (Recommend to use [Anaconda](https://www.anaconda.com/))
+* python 3.7 (recommend to use [Anaconda](https://www.anaconda.com/))
 * python packages: `pip install numpy opencv-python`
 * pytorch >= 1.1.0
 * torchvision >= 0.4.0
@@ -12,19 +12,27 @@ Pre-trained models can be downloaded from [onedrive](https://1drv.ms/u/s!Ajav6U_
 * *TTSR-rec.pt*: trained with only reconstruction loss
 * *TTSR.pt*: trained with all losses
 
-## Evaluation
+## Quick test
 1. Clone this github repo
 ```
 git clone https://github.com/FuzhiYang/TTSR.git
 cd TTSR
 ```
-2. Download [CUFED](http://acsweb.ucsd.edu/~yuw176/event-curation.html) dataset and modify "dataset_dir" in eval.sh
-3. Download pre-trained models and modify "model_path" in eval.sh
-4. Run evaluation
+2. Download pre-trained models and modify "model_path" in test.sh
+3. Run test
+```
+sh test.sh
+```
+4. The results are in "save_dir" (default: `./test/demo/output`)
+
+## Evaluation
+1. Download [CUFED](http://acsweb.ucsd.edu/~yuw176/event-curation.html) dataset and modify "dataset_dir" in eval.sh
+2. Download pre-trained models and modify "model_path" in eval.sh
+3. Run evaluation
 ```
 sh eval.sh
 ```
-5. The results are in "save_dir" (default: `./eval/CUFED/TTSR`)
+4. The results are in "save_dir" (default: `./eval/CUFED/TTSR`)
 
 ## Train
 1. Download [CUFED](http://acsweb.ucsd.edu/~yuw176/event-curation.html) dataset and modify "dataset_dir" in train.sh

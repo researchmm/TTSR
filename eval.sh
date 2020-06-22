@@ -6,5 +6,5 @@ python main.py --save_dir ./eval/CUFED/TTSR \
                --eval_save_results True \
                --num_workers 4 \
                --dataset CUFED \
-               --dataset_dir /mnt/data/CUFED/ \
+               --dataset_dir /D_data/v-fuyang/CUFED/ \
                --model_path ./TTSR.pt

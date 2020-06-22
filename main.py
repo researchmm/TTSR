@@ -7,6 +7,8 @@ from trainer import Trainer
 
 import os
 import torch
+import warnings
+warnings.filterwarnings('ignore')
 
 
 if __name__ == '__main__':
@@ -14,7 +16,7 @@ if __name__ == '__main__':
     _logger = mkExpDir(args)
 
     ### dataloader of training set and testing set
-    _dataloader = dataloader.get_dataloader(args)
+    _dataloader = dataloader.get_dataloader(args) if (not args.test) else None
 
     ### device and model
     device = torch.device('cpu' if args.cpu else 'cuda')
@@ -28,8 +30,11 @@ if __name__ == '__main__':
     ### trainer
     t = Trainer(args, _logger, _dataloader, _model, _loss_all)
 
-    ### eval / train
-    if (args.eval):
+    ### test / eval / train
+    if (args.test):
+        t.load(model_path=args.model_path)
+        t.test()
+    elif (args.eval):
         t.load(model_path=args.model_path)
         t.evaluate()
     else:

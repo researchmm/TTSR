@@ -3,7 +3,8 @@ from model import Vgg19
 
 import os
 import numpy as np
-from imageio import imsave
+from imageio import imread, imsave
+from PIL import Image
 
 import torch 
 import torch.nn as nn
@@ -157,3 +158,50 @@ class Trainer():
                     %(self.max_psnr, self.max_psnr_epoch, self.max_ssim, self.max_ssim_epoch))
 
         self.logger.info('Evaluation over.')
+
+    def test(self):
+        self.logger.info('Test process...')
+        self.logger.info('lr path:     %s' %(self.args.lr_path))
+        self.logger.info('ref path:    %s' %(self.args.ref_path))
+
+        ### LR and LR_sr
+        LR = imread(self.args.lr_path)
+        h1, w1 = LR.shape[:2]
+        LR_sr = np.array(Image.fromarray(LR).resize((w1*4, h1*4), Image.BICUBIC))
+        
+        ### Ref and Ref_sr
+        Ref = imread(self.args.ref_path)
+        h2, w2 = Ref.shape[:2]
+        h2, w2 = h2//4*4, w2//4*4
+        Ref = Ref[:h2, :w2, :]
+        Ref_sr = np.array(Image.fromarray(Ref).resize((w2//4, h2//4), Image.BICUBIC))
+        Ref_sr = np.array(Image.fromarray(Ref_sr).resize((w2, h2), Image.BICUBIC))
+
+        ### change type
+        LR = LR.astype(np.float32)
+        LR_sr = LR_sr.astype(np.float32)
+        Ref = Ref.astype(np.float32)
+        Ref_sr = Ref_sr.astype(np.float32)
+
+        ### rgb range to [-1, 1]
+        LR = LR / 127.5 - 1.
+        LR_sr = LR_sr / 127.5 - 1.
+        Ref = Ref / 127.5 - 1.
+        Ref_sr = Ref_sr / 127.5 - 1.
+
+        ### to tensor
+        LR_t = torch.from_numpy(LR.transpose((2,0,1))).unsqueeze(0).float().to(self.device)
+        LR_sr_t = torch.from_numpy(LR_sr.transpose((2,0,1))).unsqueeze(0).float().to(self.device)
+        Ref_t = torch.from_numpy(Ref.transpose((2,0,1))).unsqueeze(0).float().to(self.device)
+        Ref_sr_t = torch.from_numpy(Ref_sr.transpose((2,0,1))).unsqueeze(0).float().to(self.device)
+
+        self.model.eval()
+        with torch.no_grad():
+            sr, _, _, _, _ = self.model(lr=LR_t, lrsr=LR_sr_t, ref=Ref_t, refsr=Ref_sr_t)
+            sr_save = (sr+1.) * 127.5
+            sr_save = np.transpose(sr_save.squeeze().round().cpu().numpy(), (1, 2, 0)).astype(np.uint8)
+            save_path = os.path.join(self.args.save_dir, 'save_results', os.path.basename(self.args.lr_path))
+            imsave(save_path, sr_save)
+            self.logger.info('output path: %s' %(save_path))
+
+        self.logger.info('Test over.')
