@@ -25,8 +25,18 @@ sh test.sh
 ```
 4. The results are in "save_dir" (default: `./test/demo/output`)
 
+## Dataset prepare
+1. Download [CUFED train set](https://drive.google.com/drive/folders/1hGHy36XcmSZ1LtARWmGL5OK1IUdWJi3I) and [CUFED test set](https://drive.google.com/file/d/1Fa1mopExA9YGG1RxrCZZn7QFTYXLx6ph/view)
+2. Make dataset structure be:
+- CUFED
+    - train
+        - input
+        - ref
+    - test
+        - CUFED5
+
 ## Evaluation
-1. Download [CUFED](http://acsweb.ucsd.edu/~yuw176/event-curation.html) dataset and modify "dataset_dir" in eval.sh
+1. Prepare CUFED dataset and modify "dataset_dir" in eval.sh
 2. Download pre-trained models and modify "model_path" in eval.sh
 3. Run evaluation
 ```
@@ -35,7 +45,7 @@ sh eval.sh
 4. The results are in "save_dir" (default: `./eval/CUFED/TTSR`)
 
 ## Train
-1. Download [CUFED](http://acsweb.ucsd.edu/~yuw176/event-curation.html) dataset and modify "dataset_dir" in train.sh
+1. Prepare CUFED dataset and modify "dataset_dir" in train.sh
 2. Run training
 ```
 sh train.sh
