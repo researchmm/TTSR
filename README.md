@@ -1,6 +1,33 @@
 # TTSR
 Official PyTorch implementation of the paper [Learning Texture Transformer Network for Image Super-Resolution](https://arxiv.org/abs/2006.04139) accepted in CVPR 2020.
 
+## Contents
+- [Introduction](#introduction)
+  - [Contribution](#contribution)
+  - [Approach overview](#approach-overview)
+  - [Main results](#main-results)
+- [Requirements and dependencies](#requirements-and-dependencies)
+- [Model](#model)
+- [Quick test](#quick-test)
+- [Dataset prepare](#dataset-prepare)
+- [Evaluation](#evaluation)
+- [Train](#train)
+- [Citation](#citation)
+- [Contact](#contact)
+
+## Introduction
+We proposed an approach named TTSR for RefSR task. Compared to SISR, RefSR has an extra high-resolution reference image whose textures can be utilized to help super-resolve low-resolution input.
+
+### Contribution
+1. We are one of the first to introduce the transformer architecture into image generation tasks. More specifically, we propose a texture transformer with four closely-related modules for image SR which achieves significant improvements over SOTA approaches.
+2. We propose a novel cross-scale feature integration module for image generation tasks which enables our approach to learn a more powerful feature representation by stacking multiple texture transformers.
+
+### Approach overview
+<img src="https://github.com/FuzhiYang/TTSR_private/blob/master/IMG/TT.png" width=35%><img src="https://github.com/FuzhiYang/TTSR_private/blob/master/IMG/CSFI.png" width=50%>
+
+### Main results
+<img src="https://github.com/FuzhiYang/TTSR_private/blob/master/IMG/results.png" width=80%>
+
 ## Requirements and dependencies
 * python 3.7 (recommend to use [Anaconda](https://www.anaconda.com/))
 * python packages: `pip install numpy opencv-python`
@@ -65,5 +92,5 @@ month = {June}
 
 ## Contact
 If you meet any problems, please describe them in issues or contact:
-* yfzcopy0702@sjtu.edu.cn
+* Fuzhi Yang: <yfzcopy0702@sjtu.edu.cn>
 
