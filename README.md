@@ -23,10 +23,10 @@ We proposed an approach named TTSR for RefSR task. Compared to SISR, RefSR has a
 2. We propose a novel cross-scale feature integration module for image generation tasks which enables our approach to learn a more powerful feature representation by stacking multiple texture transformers.
 
 ### Approach overview
-<img src="https://github.com/FuzhiYang/TTSR_private/blob/master/IMG/TT.png" width=35%><img src="https://github.com/FuzhiYang/TTSR_private/blob/master/IMG/CSFI.png" width=50%>
+<img src="https://github.com/FuzhiYang/TTSR/blob/master/IMG/TT.png" width=40%><img src="https://github.com/FuzhiYang/TTSR/blob/master/IMG/CSFI.png" width=60%>
 
 ### Main results
-<img src="https://github.com/FuzhiYang/TTSR_private/blob/master/IMG/results.png" width=80%>
+<img src="https://github.com/FuzhiYang/TTSR/blob/master/IMG/results.png" width=80%>
 
 ## Requirements and dependencies
 * python 3.7 (recommend to use [Anaconda](https://www.anaconda.com/))
