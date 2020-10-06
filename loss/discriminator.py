@@ -56,7 +56,7 @@ class Discriminator(nn.Module):
 
 
 if __name__ == '__main__':
-    model = discriminator()
+    model = Discriminator()
     x = torch.ones(1, 3, 160, 160)
     out = model(x)
     print (out.size())
