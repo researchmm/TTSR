@@ -7,6 +7,7 @@ from trainer import Trainer
 
 import os
 import torch
+import torch.nn as nn
 import warnings
 warnings.filterwarnings('ignore')
 

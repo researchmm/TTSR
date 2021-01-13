@@ -47,7 +47,7 @@ class Trainer():
         if (model_path):
             self.logger.info('load_model_path: ' + model_path)
             #model_state_dict_save = {k.replace('module.',''):v for k,v in torch.load(model_path).items()}
-            model_state_dict_save = {k:v for k,v in torch.load(model_path).items()}
+            model_state_dict_save = {k:v for k,v in torch.load(model_path, map_location=self.device).items()}
             model_state_dict = self.model.state_dict()
             model_state_dict.update(model_state_dict_save)
             self.model.load_state_dict(model_state_dict)

@@ -30,7 +30,7 @@ We proposed an approach named TTSR for RefSR task. Compared to SISR, RefSR has a
 
 ## Requirements and dependencies
 * python 3.7 (recommend to use [Anaconda](https://www.anaconda.com/))
-* python packages: `pip install numpy opencv-python`
+* python packages: `pip install opencv-python imageio`
 * pytorch >= 1.1.0
 * torchvision >= 0.4.0
 
