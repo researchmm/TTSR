@@ -79,6 +79,11 @@ sh train.sh
 ```
 3. The training results are in "save_dir" (default: `./train/CUFED/TTSR`)
 
+## Related projects
+We also sincerely recommend some other excellent works related to us. :sparkles: 
+* [TTVSR: Learning Trajectory-Aware Transformer for Video Super-Resolution](https://github.com/researchmm/TTVSR)
+* [CKDN: Learning Conditional Knowledge Distillation for Degraded-Reference Image Quality Assessment](https://github.com/researchmm/CKDN)
+
 ## Citation
 ```
 @InProceedings{yang2020learning,
