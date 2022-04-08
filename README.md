@@ -1,4 +1,4 @@
-# TTSR
+# TTSR (CVPR2020)
 Official PyTorch implementation of the paper [Learning Texture Transformer Network for Image Super-Resolution](https://arxiv.org/abs/2006.04139) accepted in CVPR 2020.
 
 ## Contents
