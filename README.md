@@ -81,6 +81,7 @@ sh train.sh
 
 ## Related projects
 We also sincerely recommend some other excellent works related to us. :sparkles: 
+* [FTVSR: Learning Spatiotemporal Frequency-Transformer for Compressed Video Super-Resolution](https://github.com/researchmm/FTVSR)
 * [TTVSR: Learning Trajectory-Aware Transformer for Video Super-Resolution](https://github.com/researchmm/TTVSR)
 * [CKDN: Learning Conditional Knowledge Distillation for Degraded-Reference Image Quality Assessment](https://github.com/researchmm/CKDN)
 
